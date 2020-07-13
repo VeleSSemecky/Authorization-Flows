@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorAccent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/toolbar_history"
+        layout="@layout/toolbar"
+        tools:layout_height="?android:actionBarSize"
+        tools:layout_width="match_parent" />
+
+    <com.mikhaellopez.circularimageview.CircularImageView
+        android:visibility="gone"
+        android:id="@+id/sntCvi"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="centerInside"
+        app:civ_border_color="@color/gr"
+        app:civ_border_width="4dp"
+        app:civ_circle_color="@color/colorPrimaryDark"
+        app:civ_shadow="true"
+        app:civ_shadow_color="@color/gr"
+        app:civ_shadow_radius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_history"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+    <EditText
+        android:focusable="false"
+        android:enabled="false"
+        android:drawableEnd="@drawable/ic_baseline_create_24"
+        android:id="@+id/sntEtName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorPrimaryDark"
+        android:hint="Name"
+        android:imeOptions="actionDone"
+        android:padding="16dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sntCvi" />
+
+    <EditText
+        android:focusable="false"
+        android:enabled="false"
+        android:drawableEnd="@drawable/ic_baseline_create_24"
+        android:id="@+id/sntEtEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorPrimaryDark"
+        android:hint="Email"
+        android:imeOptions="actionDone"
+        android:padding="16dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sntEtName" />
+
+    <FrameLayout
+
+        android:id="@+id/sntProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

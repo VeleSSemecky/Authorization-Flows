@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Authorization Flows</string>
+
+    //errors
+    <string name="error_internet">Похоже, что у Вас отсутствует интернет соединение</string>
+    <string name="error_server">Ошибка сервера</string>
+    <string name="you_did_not_grant_access">You didn`t grant access</string>
+    <string name="new_purchase">New purchase</string>
+</resources>

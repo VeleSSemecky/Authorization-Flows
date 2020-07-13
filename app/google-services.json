@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "169308677608",
+    "firebase_url": "https://authorization-fl-1594397783741.firebaseio.com",
+    "project_id": "authorization-fl-1594397783741",
+    "storage_bucket": "authorization-fl-1594397783741.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:169308677608:android:9c3d99fb26025d6ebf705d",
+        "android_client_info": {
+          "package_name": "com.veles.authorizationdflows"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "169308677608-tj66mg5gmu9vhvf6rip1d9nlng2am0dl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhpHXuGhfa7ajxJoqDqOom5ylqZ8Nqb0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "169308677608-tj66mg5gmu9vhvf6rip1d9nlng2am0dl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
