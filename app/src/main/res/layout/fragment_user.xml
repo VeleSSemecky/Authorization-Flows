@@ -11,26 +11,20 @@
         tools:layout_height="?android:actionBarSize"
         tools:layout_width="match_parent" />
 
-    <com.mikhaellopez.circularimageview.CircularImageView
+    <ImageView
         android:visibility="gone"
-        android:id="@+id/sntCvi"
+        android:id="@+id/sntIv"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:scaleType="centerInside"
-        app:civ_border_color="@color/gr"
-        app:civ_border_width="4dp"
-        app:civ_circle_color="@color/colorPrimaryDark"
-        app:civ_shadow="true"
-        app:civ_shadow_color="@color/gr"
-        app:civ_shadow_radius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_history"
-        app:srcCompat="@drawable/ic_baseline_add_24" />
-    <EditText
-        android:focusable="false"
-        android:enabled="false"
-        android:drawableEnd="@drawable/ic_baseline_create_24"
+        app:srcCompat="@drawable/cartman" />
+    <TextView
+        android:focusable="true"
+        android:clickable="true"
+        android:elevation="8dp"
+
         android:id="@+id/sntEtName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -40,20 +34,16 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="@color/colorPrimaryDark"
-        android:hint="Name"
-        android:imeOptions="actionDone"
         android:padding="16dp"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sntCvi" />
+        app:layout_constraintTop_toBottomOf="@+id/sntIv" />
 
-    <EditText
-        android:focusable="false"
-        android:enabled="false"
-        android:drawableEnd="@drawable/ic_baseline_create_24"
+    <TextView
+        android:elevation="8dp"
         android:id="@+id/sntEtEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -63,8 +53,6 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:background="@color/colorPrimaryDark"
-        android:hint="Email"
-        android:imeOptions="actionDone"
         android:padding="16dp"
         android:paddingStart="8dp"
         android:paddingEnd="8dp"
@@ -73,8 +61,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sntEtName" />
 
-    <FrameLayout
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sntMbMagic"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="16dp"
+        android:text="Для тесту SharedViewModel\nНатисни і перевірь магію передачі данних"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sntEtEmail" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sntMbWeather"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="16dp"
+        android:text="Простенький REST на погоду"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sntMbMagic" />
+    <FrameLayout
         android:id="@+id/sntProgressBar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

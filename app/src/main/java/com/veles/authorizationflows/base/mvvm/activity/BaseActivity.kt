@@ -19,7 +19,7 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
-abstract class BaseActivity<VM:BaseViewModel<*>,N : INavigator> : AppCompatActivity(),  IView, Injectable, HasAndroidInjector {
+abstract class BaseActivity<VM:BaseViewModel<*>> : AppCompatActivity(),  IView, Injectable, HasAndroidInjector {
 
     abstract val viewModel :VM
 
@@ -29,17 +29,8 @@ abstract class BaseActivity<VM:BaseViewModel<*>,N : INavigator> : AppCompatActiv
     @Inject
     lateinit var fragmentDispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
-    @Inject
-    protected lateinit var navigator: N
-
     @get:LayoutRes
     protected abstract val layoutResource: Int
-
-    //by default i return -1, if the corresponding activity may show a fragment
-    //then return it's containers resourceId
-    @get:IdRes
-    open val fragmentContainerId: Int
-        get() = -1
 
     @CallSuper
     public override fun onCreate(_savedInstanceState: Bundle?) {
@@ -54,8 +45,6 @@ abstract class BaseActivity<VM:BaseViewModel<*>,N : INavigator> : AppCompatActiv
 
     protected fun parseExtras(_intent: Intent?) {}
 
-    protected val currentFragment: Fragment?
-        get() = if (fragmentContainerId == -1) null else supportFragmentManager.findFragmentById(fragmentContainerId)
 
     override fun androidInjector(): AndroidInjector<Any> {
         return fragmentDispatchingAndroidInjector
@@ -63,14 +52,12 @@ abstract class BaseActivity<VM:BaseViewModel<*>,N : INavigator> : AppCompatActiv
 
     @CallSuper
     override fun onDestroy() {
-        navigator.dispose()
         super.onDestroy()
     }
 
     @CallSuper
     override fun onBackPressed() {
-        val canGoBack = navigator.navigateBack()
-        if (!canGoBack) super.onBackPressed()
+            super.onBackPressed()
     }
 
     inline fun <reified T> Flow<T>.toLiveData(coroutineContext: CoroutineContext = viewModel.viewModelScope.coroutineContext): LiveData<T> {

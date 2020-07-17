@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_auth"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.veles.authorizationflows.presentation.user.UserFragment"
+        android:label="@null"
+        tools:layout="@layout/fragment_user">
+        <action
+            android:id="@+id/main"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph_auth"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/changeField"
+            app:destination="@id/changeFieldFragment">
+            <argument
+                android:name="myArg"
+                android:defaultValue="false"
+                app:argType="boolean" />
+        </action>
+        <action
+            android:id="@+id/weatherFragment"
+            app:destination="@id/weatherFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.veles.authorizationflows.presentation.weather.WeatherFragment"
+        android:label="@null"
+        tools:layout="@layout/fragment_weather" />
+
+    <fragment
+        android:id="@+id/changeFieldFragment"
+        android:name="com.veles.authorizationflows.presentation.change.ChangeFieldFragment"
+        android:label="@null"
+        tools:layout="@layout/fragment_change_field">
+        <argument
+            android:name="myArg"
+            android:defaultValue="false"
+            app:argType="boolean" />
+        <action
+            android:id="@+id/main"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/nav_graph_auth"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.veles.authorizationflows.presentation.login.LoginFragment"
+        android:label="@null"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/register"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/main"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/nav_graph_auth"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.veles.authorizationflows.presentation.register.RegisterFragment"
+        android:label="@null"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/main"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/nav_graph_auth"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

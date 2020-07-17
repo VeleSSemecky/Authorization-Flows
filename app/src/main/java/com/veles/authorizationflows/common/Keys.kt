@@ -10,6 +10,7 @@ class Keys {
         const val FCM_MODELS = "fcmModels"
         const val PURCHASE_MODEL = "purchaseModel"
         const val USER_DATA = "USER_DATA"
+        const val MAGIC_DATA = "MAGIC_DATA"
     }
 
     object Constant {

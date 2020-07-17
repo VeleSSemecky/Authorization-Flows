@@ -13,6 +13,8 @@ import com.veles.authorizationflows.domain.google.FirebaseAuthWithGoogle
 import com.veles.authorizationflows.domain.google.FirebaseAuthWithGoogleImpl
 import com.veles.authorizationflows.domain.update.FirebaseAuthUserUpdate
 import com.veles.authorizationflows.domain.update.FirebaseAuthUserUpdateImpl
+import com.veles.authorizationflows.domain.weather.WeatherRepository
+import com.veles.authorizationflows.domain.weather.WeatherRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -32,6 +34,10 @@ abstract class RepositoryModule {
     @Singleton
     @Binds
     abstract fun provideFirebaseAuthUserUpdate(repository: FirebaseAuthUserUpdateImpl): FirebaseAuthUserUpdate
+
+    @Singleton
+    @Binds
+    abstract fun provideWeatherRepository(repository: WeatherRepositoryImpl): WeatherRepository
 
     companion object {
         @Singleton

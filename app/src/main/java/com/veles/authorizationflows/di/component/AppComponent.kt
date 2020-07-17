@@ -2,13 +2,13 @@ package com.veles.authorizationflows.di.component
 
 import android.app.Application
 import com.veles.authorizationflows.AppApplication
-import com.veles.authorizationflows.data.bus.RxBusModule
 import com.veles.authorizationflows.data.local.DataStoreModule
 import com.veles.authorizationflows.data.network.NetworkModule
 import com.veles.authorizationflows.data.notification.fcm.NotificationModule
 import com.veles.authorizationflows.di.module.AppModule
 import com.veles.authorizationflows.di.module.ViewModelProviderFactoryModule
 import com.veles.authorizationflows.domain.RepositoryModule
+import com.veles.authorizationflows.room.DataBaseModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -25,8 +25,8 @@ import javax.inject.Singleton
         NetworkModule::class,
         RepositoryModule::class,
         DataStoreModule::class,
-        RxBusModule::class,
-        NotificationModule::class
+        NotificationModule::class,
+        DataBaseModule::class
     ]
 )
 interface AppComponent {

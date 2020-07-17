@@ -8,6 +8,7 @@ interface PermissionManager {
     fun checkPermissionCamera(): PermissionManager
     fun checkPermissionWriteExternalStorage(): PermissionManager
     fun checkPermissionCallPhone(): PermissionManager
+    fun checkPermissionLocation(): PermissionManager
     fun <T : Activity> checkPermissionResult(activity: T)
     fun <T : Fragment> checkPermissionResult(fragment: T)
     fun onRequestPermissionsResult(

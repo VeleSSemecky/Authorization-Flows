@@ -26,6 +26,12 @@ class PermissionManagerImpl @Inject internal constructor() : PermissionManager {
         return this
     }
 
+    override fun checkPermissionLocation(): PermissionManager {
+        addPermissionWillBeChecked(Manifest.permission.ACCESS_COARSE_LOCATION)
+        addPermissionWillBeChecked(Manifest.permission.ACCESS_FINE_LOCATION)
+        return this
+    }
+
     override fun checkPermissionCallPhone(): PermissionManager {
         addPermissionWillBeChecked(Manifest.permission.CALL_PHONE)
         return this

@@ -6,4 +6,11 @@
     <string name="error_server">Ошибка сервера</string>
     <string name="you_did_not_grant_access">You didn`t grant access</string>
     <string name="new_purchase">New purchase</string>
+
+    <string name="pressure">%1$s hPa</string>
+    <string name="humidity">%1$s %%</string>
+    <string name="wind_speed">%1$s m/s</string>
+    <string name="temperature">%1$s °C</string>
+
+    <string name="error_location">Ошибка локации</string>
 </resources>

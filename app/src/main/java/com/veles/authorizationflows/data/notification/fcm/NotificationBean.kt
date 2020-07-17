@@ -9,12 +9,12 @@ import androidx.core.app.NotificationCompat
 import com.veles.authorizationflows.R
 import com.veles.authorizationflows.common.Keys
 import com.veles.authorizationflows.model.fcm.DataModel
-import com.veles.authorizationflows.presentation.authorization.activity.AuthorizationActivity
+import com.veles.authorizationflows.presentation.activity.MainActivity
 
 
 internal object NotificationBean {
     fun sendNotification(context: Context, dataNotification: DataModel) {
-        val intent = Intent(context, AuthorizationActivity::class.java)
+        val intent = Intent(context, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP)
         val pendingIntent = PendingIntent.getActivity(
             context,

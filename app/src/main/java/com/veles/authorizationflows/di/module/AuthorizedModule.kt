@@ -1,10 +1,8 @@
 package com.veles.authorizationflows.di.module
 
 import com.veles.authorizationflows.di.scope.AuthorizedScope
-import com.veles.authorizationflows.presentation.authorization.activity.AuthorizationContract
-import com.veles.authorizationflows.presentation.authorization.activity.AuthorizationModel
-import com.veles.authorizationflows.presentation.main.activity.MainContract
-import com.veles.authorizationflows.presentation.main.activity.MainModel
+import com.veles.authorizationflows.presentation.activity.MainContract
+import com.veles.authorizationflows.presentation.activity.MainModel
 import dagger.Binds
 import dagger.Module
 
@@ -13,7 +11,7 @@ abstract class AuthorizedModule {
 
     @AuthorizedScope
     @Binds
-    abstract fun provideKModel(categoriesModel: AuthorizationModel): AuthorizationContract.Model
+    abstract fun provideKModel(categoriesModel: MainModel): MainContract.Model
 
     @AuthorizedScope
     @Binds

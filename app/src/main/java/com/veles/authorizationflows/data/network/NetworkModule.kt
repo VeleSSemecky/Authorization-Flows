@@ -18,8 +18,7 @@ import com.veles.authorizationflows.data.network.core.NetworkConfig.trustAllCert
 import com.veles.authorizationflows.data.network.factory.NullOnEmptyConverterFactory
 import com.veles.authorizationflows.data.network.factory.NullableTypAdapterFactory
 import com.veles.authorizationflows.data.network.factory.RxJava2CallAdapterFactoryWrapper.Companion.create
-import com.veles.authorizationflows.data.network.service.banner.BannerListService
-import com.veles.authorizationflows.data.network.service.message.NotificationMessageService
+import com.veles.authorizationflows.data.network.service.weather.WeatherService
 import com.veles.authorizationflows.di.qualifier.Mapper
 import dagger.Module
 import dagger.Provides
@@ -72,7 +71,7 @@ object NetworkModule {
         for (interceptor in defaultNetworkConfig.interceptors) {
             okHttpBuilder.addInterceptor(interceptor)
         }
-        okHttpBuilder.hostnameVerifier(HostnameVerifier { hostname: String?, session: SSLSession? -> true })
+        okHttpBuilder.hostnameVerifier(HostnameVerifier { _: String?, _: SSLSession? -> true })
         val interceptor =
             HttpLoggingInterceptor(object : HttpLoggingInterceptor.Logger {
                 override fun log(message: String) {
@@ -139,13 +138,8 @@ object NetworkModule {
     //banner
     @Singleton
     @Provides
-    fun provideBannerListService(_retrofit: Retrofit): BannerListService {
-        return _retrofit.create(BannerListService::class.java)
+    fun provideWeatherService(_retrofit: Retrofit): WeatherService {
+        return _retrofit.create(WeatherService::class.java)
     }
 
-    @Singleton
-    @Provides
-    fun provideNotificationMessageService(_retrofit: Retrofit): NotificationMessageService {
-        return _retrofit.create(NotificationMessageService::class.java)
-    }
 }

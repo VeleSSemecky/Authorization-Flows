@@ -2,8 +2,8 @@
     package="com.veles.authorizationflows">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:name="com.veles.authorizationflows.AppApplication"
@@ -15,8 +15,8 @@
         android:theme="@style/AppTheme" >
 
         <activity
-            android:name=".presentation.splash.SplashActivity"
-            android:theme="@style/SplashTheme"
+            android:name="com.veles.authorizationflows.presentation.activity.MainActivity"
+            android:theme="@style/AppTheme"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,8 +25,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.veles.authorizationflows.presentation.main.activity.MainActivity"/>
-        <activity android:name=".presentation.authorization.activity.AuthorizationActivity"/>
+
+
         <service
             android:name="com.veles.authorizationflows.data.notification.fcm.NotificationFirebaseMessagingServiceImpl"
             android:enabled="true"
